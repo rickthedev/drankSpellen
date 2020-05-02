@@ -20,5 +20,6 @@ collections:
           - { label: Makkelijk, value: makkelijk }
           - { label: Gemiddeld, value: gemiddeld }
           - { label: Moeilijk, value: moeilijk }
+      - { name: short, label: Kort, widget: text }
       - { name: image, label: Afbeelding, widget: image }
       - { name: body, label: Omschrijving, widget: markdown }

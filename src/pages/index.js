@@ -5,25 +5,45 @@ import "./style.css"
 import Card from "../components/Card"
 import { useStaticQuery, graphql } from "gatsby"
 
-const spellen = useStaticQuery(graphql`
-  
-`)
+export default () => {
+  const spellen = useStaticQuery(graphql`
+    query {
+      allMarkdownRemark {
+        edges {
+          node {
+            frontmatter {
+              title
+              players
+              difficulty
+              image
+            }
+          }
+        }
+      }
+    }
+  `)
 
-export default () => (
-  <div>
-    <Header></Header>
-    <h2 className="text-3xl text-center mb-4 mt-8">Spellen</h2>
-    <div className="p-4 mx-auto container grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-      <Card
-        title="Bier Pong"
-        players="2-4 spelers"
-        difficulty="makkelijk"
-      ></Card>
-      <Card
-        title="Kingsen"
-        players="4-12 spelers"
-        difficulty="gemiddeld"
-      ></Card>
+  console.log(spellen)
+
+  return (
+    <div>
+      <Header></Header>
+      <h2 className="text-3xl text-center mb-4 mt-8">Spellen</h2>
+      <div className="p-4 mx-auto container grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {spellen.allMarkdownRemark.edges.map(edge => {
+          const { title, players, difficulty, image } = edge.node.frontmatter
+          console.log(title)
+
+          return (
+            <Card
+              title={title}
+              players={players}
+              difficulty={difficulty}
+              image={image}
+            ></Card>
+          )
+        })}
+      </div>
     </div>
-  </div>
-)
+  )
+}
