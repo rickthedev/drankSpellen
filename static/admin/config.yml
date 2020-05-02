@@ -1,15 +1,24 @@
 backend:
-  name: git-gateway
-  branch: master
+  name: github
+  repo: rickthedev/drankSpellen
 
-media_folder: 'assets/uploads'
+media_folder: "static/assets/"
+public_folder: "assets"
 
 collections:
-  - name: "posts"
-    label: "Post"
-    folder: "_posts"
-    filter:
-      field: language
-      value: en
+  - name: Game
+    label: game
+    folder: src/games
+    create: true
     fields:
-      - { label: "Language", name: "language" }
+      - { name: titel, label: Titel, widget: string }
+      - { name: spelers, label: Spelers, widget: string }
+      - label: "moeilijkheidsgraad"
+        name: "Moeilijkheidsgraad"
+        widget: "select"
+        options:
+          - { label: Makkelijk, value: makkelijk }
+          - { label: Gemiddeld, value: gemiddeld }
+          - { label: Moeilijk, value: moeilijk }
+      - { name: afbeelding, label: Afbeelding, widget: image }
+      - { name: omschrijving, label: Omschrijving, widget: markdown }
