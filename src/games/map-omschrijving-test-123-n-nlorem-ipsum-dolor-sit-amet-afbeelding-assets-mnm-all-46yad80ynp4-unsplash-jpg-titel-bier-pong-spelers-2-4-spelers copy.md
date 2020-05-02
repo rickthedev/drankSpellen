@@ -2,6 +2,9 @@
 title: bier pong
 players: 2-4 spelers
 difficulty: makkelijk
+short: Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis dolor
+  iste voluptatibus excepturi eos sit amet quam nobis dolorum tempora culpa
+  atque aliquid provident fugit illum, nihil vel, saepe voluptates.
 image: assets/mnm-all-46yad80ynp4-unsplash.jpg
 ---
 

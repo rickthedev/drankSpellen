@@ -16,6 +16,7 @@ export default () => {
               players
               difficulty
               image
+              short
             }
           }
         }
@@ -31,8 +32,13 @@ export default () => {
       <h2 className="text-3xl text-center mb-4 mt-8">Spellen</h2>
       <div className="p-4 mx-auto container grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
         {spellen.allMarkdownRemark.edges.map(edge => {
-          const { title, players, difficulty, image } = edge.node.frontmatter
-          console.log(title)
+          const {
+            title,
+            players,
+            difficulty,
+            image,
+            short,
+          } = edge.node.frontmatter
 
           return (
             <Card
@@ -40,6 +46,7 @@ export default () => {
               players={players}
               difficulty={difficulty}
               image={image}
+              short={short}
             ></Card>
           )
         })}
