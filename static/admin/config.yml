@@ -11,14 +11,14 @@ collections:
     folder: src/games
     create: true
     fields:
-      - { name: titel, label: Titel, widget: string }
-      - { name: spelers, label: Spelers, widget: string }
-      - label: "moeilijkheidsgraad"
-        name: "Moeilijkheidsgraad"
+      - { name: title, label: Titel, widget: string }
+      - { name: players, label: Spelers, widget: string }
+      - label: "Moeilijkheidsgraad"
+        name: "difficulty"
         widget: "select"
         options:
           - { label: Makkelijk, value: makkelijk }
           - { label: Gemiddeld, value: gemiddeld }
           - { label: Moeilijk, value: moeilijk }
-      - { name: afbeelding, label: Afbeelding, widget: image }
-      - { name: omschrijving, label: Omschrijving, widget: markdown }
+      - { name: image, label: Afbeelding, widget: image }
+      - { name: body, label: Omschrijving, widget: markdown }

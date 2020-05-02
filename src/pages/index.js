@@ -3,6 +3,11 @@ import Header from "../components/Header"
 
 import "./style.css"
 import Card from "../components/Card"
+import { useStaticQuery, graphql } from "gatsby"
+
+const spellen = useStaticQuery(graphql`
+  
+`)
 
 export default () => (
   <div>
